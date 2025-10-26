@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/style.css" />
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <link rel="stylesheet" href="/style.css" >
     <title>Contact Me</title>
   </head>
   <body>
@@ -14,7 +14,12 @@
             <strong><a href="index.html">My Wonderful Blog</a></strong>
           </li>
         </ul>
-        <ul>
+
+        <!-- Hamburger toggle -->
+        <input type="checkbox" id="menu-toggle" class="menu-toggle" >
+        <label for="menu-toggle" class="hamburger"> ☰ </label>
+
+        <ul class="nav-links">
           <li><a href="index.html" class="contrast">Home</a></li>
           <li><a href="about.html" class="contrast">About</a></li>
           <li><a href="contact.html" class="contrast">Contact</a></li>
@@ -27,12 +32,12 @@
       <form class="contact-form" netlify>
         <div class="form-group">
           <label for="name">Name:</label>
-          <input type="text" id="name" name="name" required />
+          <input type="text" id="name" name="name" required >
         </div>
 
         <div class="form-group">
           <label for="email">Email Address:</label>
-          <input type="email" id="email" name="email" required />
+          <input type="email" id="email" name="email" required >
         </div>
 
         <div class="form-group">

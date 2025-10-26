@@ -93,13 +93,14 @@ button:hover {
 }
 
 /* Make <ul> items align horizontally */
-.navbar ul {
+.navbar  ul {
   display: flex;
   gap: 1rem;
   list-style: none;
   margin: 0;
   padding: 0;
 }
+
 
 /* ========== FLEXBOX LAYOUTS ========== */
 main {
@@ -271,5 +272,125 @@ hr {
     float: none;
     width: 100%;
     margin: 0 0 1rem 0;
+  }
+}
+
+/* -------- TABLET VIEW (max-width: 992px) -------- */
+@media (max-width: 992px) {
+  .navbar {
+    padding: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .articles-wrapper,
+  .about-content {
+    flex-direction: column;
+    margin: 1rem;
+  }
+
+  .blog-image {
+    float: none;
+    width: 100%;
+    margin: 1rem 0;
+  }
+
+  table {
+    font-size: 0.9rem;
+  }
+
+  .newsletter-bar {
+    margin: 1rem;
+  }
+}
+
+/* -------- DESKTOP VIEW (min-width: 601px) -------- */
+@media (min-width: 601px) {
+  .hamburger {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+
+  .nav-links {
+    display: flex !important;
+  }
+
+  .navbar nav {
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+/* -------- MOBILE NAV -------- */
+@media (max-width: 600px) {
+
+  .navbar {
+    background-color: #333;
+    padding: 1rem 1.5rem;
+  }
+
+  .navbar nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    width: 100%;
+  }
+
+  .menu-toggle {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    font-size: 1.8rem;
+    color: white;
+    user-select: none;
+  }
+
+  /* Ensure nav-links are hidden by default (explicit and specific) */
+  .navbar .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #333;
+    padding: 0.25rem 0.5rem;
+    border-radius: 6px;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+    z-index: 200;
+    min-width: 160px;
+  }
+
+  /* Use the id + general sibling selector — robust to spacing / comments in HTML */
+  #menu-toggle:checked ~ .nav-links {
+    display: flex;
+  }
+
+  .nav-links li {
+    list-style: none;
+    margin: 0;
+  }
+
+  /* simple inline text links — not chunky buttons */
+  .nav-links a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.95rem;
+    background: none;
+  }
+
+  .nav-links a:hover {
+    text-decoration: underline;
   }
 }
